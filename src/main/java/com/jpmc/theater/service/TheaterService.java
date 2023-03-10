@@ -14,12 +14,29 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Theater service.
+ */
 @Slf4j
 public class TheaterService {
+    /**
+     * The Provider.
+     */
     LocalDateProvider provider;
+    /**
+     * The Movie theater cache.
+     */
     MovieTheaterCache movieTheaterCache;
+    /**
+     * The Mapper.
+     */
     ObjectMapper mapper = new ObjectMapper();
 
+    /**
+     * Instantiates a new Theater service.
+     *
+     * @param provider the provider
+     */
     public TheaterService(LocalDateProvider provider) {
         this.provider = provider;
         movieTheaterCache = new MovieTheaterCache();
@@ -27,6 +44,14 @@ public class TheaterService {
         cacheBuilderService.buildMoveTheaterCache(provider);
     }
 
+    /**
+     * Reserve reservation.
+     *
+     * @param customer       the customer
+     * @param sequence       the sequence
+     * @param howManyTickets the how many tickets
+     * @return the reservation
+     */
     public Reservation reserve(Customer customer, int sequence, int howManyTickets) {
         Showing showing;
         try {
@@ -37,6 +62,12 @@ public class TheaterService {
         return new Reservation(customer, showing, howManyTickets);
     }
 
+    /**
+     * Gets print schedule.
+     *
+     * @return the print schedule
+     * @throws JsonProcessingException the json processing exception
+     */
     public String getPrintSchedule() throws JsonProcessingException {
         log.info("Schedule for date : {} ",provider.currentDate());
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -48,6 +79,12 @@ public class TheaterService {
         return mapper.writeValueAsString(scheduleLists);
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws JsonProcessingException the json processing exception
+     */
     public static void main(String[] args) throws JsonProcessingException {
         TheaterService theaterService = new TheaterService(LocalDateProvider.singleton());
         log.info("===================================================");

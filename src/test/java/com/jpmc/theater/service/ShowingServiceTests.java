@@ -12,8 +12,14 @@ import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * The type Showing service tests.
+ */
 public class ShowingServiceTests {
 
+    /**
+     * Is sequence test.
+     */
     @Test
     void isSequenceTest(){
         Movie spiderMan = new Movie("Spider-Man: No Way Home","Marvel Movie", Duration.ofMinutes(90),12.5, 0);
@@ -23,6 +29,9 @@ public class ShowingServiceTests {
         Assertions.assertTrue(showingService.isSequence(showing,1));
     }
 
+    /**
+     * Get movie fee test.
+     */
     @Test
     void getMovieFeeTest(){
         Movie spiderMan = new Movie("Spider-Man: No Way Home","Marvel Movie", Duration.ofMinutes(90),12.5, 0);
@@ -32,6 +41,9 @@ public class ShowingServiceTests {
         Assertions.assertEquals(showingService.getMovieFee(showing),12.5);
     }
 
+    /**
+     * Calculate fee for person.
+     */
     @Test
     void calculateFeeForPerson() {
         Movie spiderMan = new Movie("Spider-Man: No Way Home","Marvel Movie", Duration.ofMinutes(90),12.5, 0);

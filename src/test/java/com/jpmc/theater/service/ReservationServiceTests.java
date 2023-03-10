@@ -12,8 +12,14 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * The type Reservation service tests.
+ */
 public class ReservationServiceTests {
 
+    /**
+     * Total fee.
+     */
     @Test
     void totalFee() {
         var customer = new Customer("John Doe", "unused-id");
@@ -27,6 +33,9 @@ public class ReservationServiceTests {
         assertEquals(reservationService.totalFee(reservation) , 37.5);
     }
 
+    /**
+     * No audience.
+     */
     @Test
     void noAudience() {
         var customer = new Customer("John Doe", "unused-id");

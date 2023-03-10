@@ -7,9 +7,19 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.time.temporal.ValueRange;
 
+/**
+ * The type Movie service.
+ */
 @Slf4j
 public class MovieService {
 
+    /**
+     * Calculate ticket price double.
+     *
+     * @param movie   the movie
+     * @param showing the showing
+     * @return the double
+     */
     public double calculateTicketPrice(Movie movie,Showing showing) {
         return movie.getTicketPrice() - getDiscount(movie,showing);
     }

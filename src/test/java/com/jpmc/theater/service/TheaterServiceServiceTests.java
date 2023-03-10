@@ -9,7 +9,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * The type Theater service service tests.
+ */
 public class TheaterServiceServiceTests {
+    /**
+     * Total fee for customer.
+     */
     @Test
     void totalFeeForCustomer() {
         TheaterService theaterService = new TheaterService(LocalDateProvider.singleton());
@@ -18,6 +24,11 @@ public class TheaterServiceServiceTests {
         assertEquals(reservation.totalFee(), 50);
     }
 
+    /**
+     * Print movie schedule.
+     *
+     * @throws JsonProcessingException the json processing exception
+     */
     @Test
     void printMovieSchedule() throws JsonProcessingException {
         TheaterService theaterService = new TheaterService(LocalDateProvider.singleton());

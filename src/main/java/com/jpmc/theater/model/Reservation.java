@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+/**
+ * The type Reservation.
+ */
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @Data
@@ -18,6 +21,11 @@ public class Reservation {
     Showing showing;
     int audienceCount;
 
+    /**
+     * Total fee double.
+     *
+     * @return the double
+     */
     public double totalFee() {
         return showing.getMovieFee() * audienceCount;
     }

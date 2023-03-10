@@ -8,6 +8,9 @@ import lombok.Setter;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+/**
+ * The type Movie theater cache.
+ */
 @Getter(AccessLevel.PUBLIC)
 @Setter(AccessLevel.PUBLIC)
 public class MovieTheaterCache {

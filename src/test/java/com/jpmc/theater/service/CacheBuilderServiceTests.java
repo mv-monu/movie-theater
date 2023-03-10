@@ -7,8 +7,15 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+/**
+ * The type Cache builder service tests.
+ */
 public class CacheBuilderServiceTests {
 
+
+    /**
+     * Build cache test.
+     */
     @Test
     void buildCacheTest(){
     MovieTheaterCache movieTheaterCache = new MovieTheaterCache();

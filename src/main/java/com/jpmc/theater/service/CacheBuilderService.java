@@ -16,6 +16,9 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
+/**
+ * The type Cache builder service.
+ */
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @Data
@@ -25,6 +28,11 @@ public class CacheBuilderService {
 
     MovieTheaterCache movieTheaterCache;
 
+    /**
+     * Build move theater cache.
+     *
+     * @param provider the provider
+     */
     public void buildMoveTheaterCache(LocalDateProvider provider){
        if(movieTheaterCache!=null){
            movieTheaterCache.getSchedule().clear();

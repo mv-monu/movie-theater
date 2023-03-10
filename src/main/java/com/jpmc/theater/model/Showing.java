@@ -8,6 +8,9 @@ import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDateTime;
 
+/**
+ * The type Showing.
+ */
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @Data
@@ -21,10 +24,21 @@ public class Showing {
     int sequenceOfTheDay;
     LocalDateTime showStartTime;
 
+    /**
+     * Is sequence boolean.
+     *
+     * @param sequence the sequence
+     * @return the boolean
+     */
     public boolean isSequence(int sequence) {
         return this.sequenceOfTheDay == sequence;
     }
 
+    /**
+     * Gets movie fee.
+     *
+     * @return the movie fee
+     */
     public double getMovieFee() {
         return movie.getTicketPrice();
     }

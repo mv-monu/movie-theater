@@ -8,6 +8,9 @@ import lombok.experimental.FieldDefaults;
 
 import java.time.Duration;
 
+/**
+ * The type Movie.
+ */
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @Data
@@ -25,6 +28,11 @@ public class Movie {
     private double ticketPrice;
     private int specialCode;
 
+    /**
+     * Gets running time format.
+     *
+     * @return the running time format
+     */
     public String getRunningTimeFormat() {
         return  CommonUtils.humanReadableFormat(this.runningTime);
     }

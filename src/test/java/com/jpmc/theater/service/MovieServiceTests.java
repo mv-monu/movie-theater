@@ -12,9 +12,15 @@ import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * The type Movie service tests.
+ */
 public class MovieServiceTests {
 
 
+    /**
+     * Special movie with 50 percent discount.
+     */
     @Test
     void specialMovieWith50PercentDiscount() {
         Movie spiderMan = new Movie("Spider-Man: No Way Home","Marvel Movie", Duration.ofMinutes(90),12.5, 1);
@@ -23,6 +29,9 @@ public class MovieServiceTests {
         assertEquals(10, movieService.calculateTicketPrice(spiderMan,showing));
     }
 
+    /**
+     * Special movie with 25 percent discount.
+     */
     @Test
     void specialMovieWith25PercentDiscount() {
         Movie spiderMan = new Movie("Spider-Man: No Way Home","Marvel Movie", Duration.ofMinutes(90),12.5, 1);
@@ -31,6 +40,9 @@ public class MovieServiceTests {
         assertEquals(9.375, movieService.calculateTicketPrice(spiderMan,showing));
     }
 
+    /**
+     * Special movie with 3 dollar discount 1 seq.
+     */
     @Test
     void specialMovieWith3DollarDiscount1seq() {
         Movie spiderMan = new Movie("Spider-Man: No Way Home","Marvel Movie", Duration.ofMinutes(90),12.5, 0);
@@ -39,6 +51,9 @@ public class MovieServiceTests {
         assertEquals(9.5, movieService.calculateTicketPrice(spiderMan,showing));
     }
 
+    /**
+     * Special movie with 2 dollar discount 2 seq.
+     */
     @Test
     void specialMovieWith2DollarDiscount2seq() {
         Movie spiderMan = new Movie("Spider-Man: No Way Home","Marvel Movie", Duration.ofMinutes(90),12.5, 0);
@@ -47,6 +62,9 @@ public class MovieServiceTests {
         assertEquals(10.5, movieService.calculateTicketPrice(spiderMan,showing));
     }
 
+    /**
+     * Special movie with 1 dollar discount 7 seq.
+     */
     @Test
     void specialMovieWith1DollarDiscount7seq() {
         Movie spiderMan = new Movie("Spider-Man: No Way Home","Marvel Movie", Duration.ofMinutes(90),12.5, 0);
@@ -55,6 +73,9 @@ public class MovieServiceTests {
         assertEquals(11.5, movieService.calculateTicketPrice(spiderMan,showing));
     }
 
+    /**
+     * No discount movie.
+     */
     @Test
     void noDiscountMovie() {
         Movie spiderMan = new Movie("Spider-Man: No Way Home","Marvel Movie", Duration.ofMinutes(90),12.5, 0);

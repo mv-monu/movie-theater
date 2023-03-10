@@ -6,7 +6,13 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
+/**
+ * The type Local date provider tests.
+ */
 public class LocalDateProviderTests {
+    /**
+     * Make sure current time.
+     */
     @Test
     void makeSureCurrentTime() {
         LocalDate now = LocalDate.now();
